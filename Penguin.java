@@ -22,22 +22,18 @@ public class Penguin extends Bird implements Swim {
         return swimming;
     }
 
-    /**
-     * dives, must be on ground
-     */
+    
+
     @Override
     public void dive() {
-        if (!this.swimming && this.depths == 0) {
+        if (this.swimming && this.depths == 0) {
             this.swimming = true;
             System.out.printf("%s dives into the water.%n", this.getName());
         }
     }
 
-    /**
-     * swim downward
-     * @param meters depths increase
-     * @return depth
-     */
+    
+
     @Override
     public int swimDown(int meters) {
         if (this.swimming) {
@@ -47,11 +43,8 @@ public class Penguin extends Bird implements Swim {
         return this.depths;
     }
 
-    /**
-     * swin upward
-     * @param meters depths decrease
-     * @return depth
-     */
+    
+
     @Override
     public int swimUp(int meters) {
         if (this.swimming) {
@@ -61,9 +54,9 @@ public class Penguin extends Bird implements Swim {
         return this.depths;
     }
 
-    /**
-     * get out of water, must be on surface
-     */
+    
+
+
     @Override
     public void getOut() {
         if (this.swimming && this.depths == 0) {
